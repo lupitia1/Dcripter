@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCripter", "DCripter\DCripter.csproj", "{4906E1F4-15B9-4A0F-A5D8-4F95BAAB134E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Management", "Management\Management.csproj", "{4EA5D624-2755-432B-87AA-94D3B48EC3E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back_Logic", "Back_Logic", "{5379D98E-C712-435D-AF50-EA2C87CF2BDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front_Logic", "Front_Logic", "{279885CF-DBB6-4F99-9F8D-069CC7C27414}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{86BF65AE-F09D-42F6-8A7B-68770C1E3DAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C25BA438-C539-47B2-B442-5CACC722CB39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoProviders", "CryptoProviders\CryptoProviders.csproj", "{E3BE46E8-E999-481B-9383-0A13DEB70A3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4906E1F4-15B9-4A0F-A5D8-4F95BAAB134E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4906E1F4-15B9-4A0F-A5D8-4F95BAAB134E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4906E1F4-15B9-4A0F-A5D8-4F95BAAB134E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4906E1F4-15B9-4A0F-A5D8-4F95BAAB134E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA5D624-2755-432B-87AA-94D3B48EC3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA5D624-2755-432B-87AA-94D3B48EC3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA5D624-2755-432B-87AA-94D3B48EC3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA5D624-2755-432B-87AA-94D3B48EC3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25BA438-C539-47B2-B442-5CACC722CB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25BA438-C539-47B2-B442-5CACC722CB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25BA438-C539-47B2-B442-5CACC722CB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25BA438-C539-47B2-B442-5CACC722CB39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BE46E8-E999-481B-9383-0A13DEB70A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BE46E8-E999-481B-9383-0A13DEB70A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BE46E8-E999-481B-9383-0A13DEB70A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BE46E8-E999-481B-9383-0A13DEB70A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4906E1F4-15B9-4A0F-A5D8-4F95BAAB134E} = {279885CF-DBB6-4F99-9F8D-069CC7C27414}
+		{4EA5D624-2755-432B-87AA-94D3B48EC3E1} = {5379D98E-C712-435D-AF50-EA2C87CF2BDF}
+		{C25BA438-C539-47B2-B442-5CACC722CB39} = {86BF65AE-F09D-42F6-8A7B-68770C1E3DAB}
+		{E3BE46E8-E999-481B-9383-0A13DEB70A3C} = {5379D98E-C712-435D-AF50-EA2C87CF2BDF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72B8ACE5-2C1C-43E4-B7CF-FED1BD48A725}
+	EndGlobalSection
+EndGlobal
