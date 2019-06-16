@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 namespace Management
 {
     public class KeysGenerator
-    {
+    {/*
         RSAParameters privateKey;
         RSAParameters publicKey;
         String[] keyPar = new string[2];
@@ -101,6 +101,6 @@ namespace Management
 
             return result.ToString();
         }
-
+*/
     }
 }

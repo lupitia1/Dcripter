@@ -30,22 +30,22 @@
         {
             this.privateKeyLabel1 = new System.Windows.Forms.Label();
             this.publicKeyLabel2 = new System.Windows.Forms.Label();
-            this.textToDecryptLabel = new System.Windows.Forms.Label();
             this.generateTdesButton = new System.Windows.Forms.Button();
             this.encryptTdesKeyButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.encryptedText = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.publicKeyValueLabel = new System.Windows.Forms.Label();
-            this.privateKeyValueLabel = new System.Windows.Forms.Label();
-            this.rsaSlaveKeyValueLabel = new System.Windows.Forms.Label();
-            this.TdesKeyValueLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.desencryptedText = new System.Windows.Forms.Label();
             this.importRsaSlaveButton = new System.Windows.Forms.Button();
             this.generateRsaKeysButton = new System.Windows.Forms.Button();
+            this.encryptedTdesBox = new System.Windows.Forms.TextBox();
+            this.publicKeyBox = new System.Windows.Forms.TextBox();
+            this.privateKeyBox = new System.Windows.Forms.TextBox();
+            this.slaveRsaPublicKey = new System.Windows.Forms.TextBox();
+            this.tdesKey = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // privateKeyLabel1
@@ -67,21 +67,12 @@
             this.publicKeyLabel2.TabIndex = 4;
             this.publicKeyLabel2.Text = "Clave Pública";
             // 
-            // textToDecryptLabel
-            // 
-            this.textToDecryptLabel.AutoSize = true;
-            this.textToDecryptLabel.Location = new System.Drawing.Point(265, 325);
-            this.textToDecryptLabel.Name = "textToDecryptLabel";
-            this.textToDecryptLabel.Size = new System.Drawing.Size(195, 13);
-            this.textToDecryptLabel.TabIndex = 8;
-            this.textToDecryptLabel.Text = "<<Valor de la clave TDES encriptada>>";
-            this.textToDecryptLabel.Click += new System.EventHandler(this.textToDecryptLabel_Click);
-            // 
             // generateTdesButton
             // 
-            this.generateTdesButton.Location = new System.Drawing.Point(16, 232);
+            this.generateTdesButton.AutoSize = true;
+            this.generateTdesButton.Location = new System.Drawing.Point(16, 244);
             this.generateTdesButton.Name = "generateTdesButton";
-            this.generateTdesButton.Size = new System.Drawing.Size(140, 42);
+            this.generateTdesButton.Size = new System.Drawing.Size(116, 42);
             this.generateTdesButton.TabIndex = 11;
             this.generateTdesButton.Text = "Generar clave TDES";
             this.generateTdesButton.UseVisualStyleBackColor = true;
@@ -107,14 +98,15 @@
             this.label1.Text = "----------------------------------------------------------------------";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // encryptedText
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 398);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "<<Texto encriptado del fichero xml>>";
+            this.encryptedText.AutoSize = true;
+            this.encryptedText.Location = new System.Drawing.Point(265, 398);
+            this.encryptedText.MaximumSize = new System.Drawing.Size(210, 0);
+            this.encryptedText.Name = "encryptedText";
+            this.encryptedText.Size = new System.Drawing.Size(181, 13);
+            this.encryptedText.TabIndex = 16;
+            this.encryptedText.Text = "<<Texto encriptado del fichero xml>>";
             // 
             // label3
             // 
@@ -126,52 +118,15 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Maestro";
             // 
-            // publicKeyValueLabel
-            // 
-            this.publicKeyValueLabel.AutoSize = true;
-            this.publicKeyValueLabel.Location = new System.Drawing.Point(265, 63);
-            this.publicKeyValueLabel.Name = "publicKeyValueLabel";
-            this.publicKeyValueLabel.Size = new System.Drawing.Size(110, 13);
-            this.publicKeyValueLabel.TabIndex = 18;
-            this.publicKeyValueLabel.Text = "<<Valor de la clave>>";
-            this.publicKeyValueLabel.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // privateKeyValueLabel
-            // 
-            this.privateKeyValueLabel.AutoSize = true;
-            this.privateKeyValueLabel.Location = new System.Drawing.Point(265, 117);
-            this.privateKeyValueLabel.Name = "privateKeyValueLabel";
-            this.privateKeyValueLabel.Size = new System.Drawing.Size(110, 13);
-            this.privateKeyValueLabel.TabIndex = 19;
-            this.privateKeyValueLabel.Text = "<<Valor de la clave>>";
-            this.privateKeyValueLabel.Click += new System.EventHandler(this.label4_Click_1);
-            // 
-            // rsaSlaveKeyValueLabel
-            // 
-            this.rsaSlaveKeyValueLabel.AutoSize = true;
-            this.rsaSlaveKeyValueLabel.Location = new System.Drawing.Point(265, 172);
-            this.rsaSlaveKeyValueLabel.Name = "rsaSlaveKeyValueLabel";
-            this.rsaSlaveKeyValueLabel.Size = new System.Drawing.Size(202, 13);
-            this.rsaSlaveKeyValueLabel.TabIndex = 21;
-            this.rsaSlaveKeyValueLabel.Text = "<<Valor de la clave pública de esclavo>>";
-            // 
-            // TdesKeyValueLabel
-            // 
-            this.TdesKeyValueLabel.AutoSize = true;
-            this.TdesKeyValueLabel.Location = new System.Drawing.Point(265, 247);
-            this.TdesKeyValueLabel.Name = "TdesKeyValueLabel";
-            this.TdesKeyValueLabel.Size = new System.Drawing.Size(142, 13);
-            this.TdesKeyValueLabel.TabIndex = 22;
-            this.TdesKeyValueLabel.Text = "<<Valor de la clave TDES>>";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(467, 302);
+            this.button1.Location = new System.Drawing.Point(467, 310);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 58);
             this.button1.TabIndex = 23;
             this.button1.Text = "Exportar xml TDES encriptada ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
             // button2
             // 
@@ -181,6 +136,7 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "Importar mensaje de xml";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -190,19 +146,20 @@
             this.button3.TabIndex = 25;
             this.button3.Text = "Desencriptar mensaje";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label4
+            // desencryptedText
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(218, 519);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "<<Texto desencriptado>>";
+            this.desencryptedText.AutoSize = true;
+            this.desencryptedText.Location = new System.Drawing.Point(218, 519);
+            this.desencryptedText.Name = "desencryptedText";
+            this.desencryptedText.Size = new System.Drawing.Size(128, 13);
+            this.desencryptedText.TabIndex = 26;
+            this.desencryptedText.Text = "<<Texto desencriptado>>";
             // 
             // importRsaSlaveButton
             // 
-            this.importRsaSlaveButton.Location = new System.Drawing.Point(16, 157);
+            this.importRsaSlaveButton.Location = new System.Drawing.Point(16, 174);
             this.importRsaSlaveButton.Name = "importRsaSlaveButton";
             this.importRsaSlaveButton.Size = new System.Drawing.Size(140, 42);
             this.importRsaSlaveButton.TabIndex = 20;
@@ -220,27 +177,77 @@
             this.generateRsaKeysButton.UseVisualStyleBackColor = true;
             this.generateRsaKeysButton.Click += new System.EventHandler(this.generateRsaKeysButton_Click);
             // 
+            // encryptedTdesBox
+            // 
+            this.encryptedTdesBox.Location = new System.Drawing.Point(259, 310);
+            this.encryptedTdesBox.Multiline = true;
+            this.encryptedTdesBox.Name = "encryptedTdesBox";
+            this.encryptedTdesBox.ReadOnly = true;
+            this.encryptedTdesBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.encryptedTdesBox.Size = new System.Drawing.Size(201, 73);
+            this.encryptedTdesBox.TabIndex = 48;
+            // 
+            // publicKeyBox
+            // 
+            this.publicKeyBox.Location = new System.Drawing.Point(259, 42);
+            this.publicKeyBox.Multiline = true;
+            this.publicKeyBox.Name = "publicKeyBox";
+            this.publicKeyBox.ReadOnly = true;
+            this.publicKeyBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.publicKeyBox.Size = new System.Drawing.Size(201, 47);
+            this.publicKeyBox.TabIndex = 49;
+            // 
+            // privateKeyBox
+            // 
+            this.privateKeyBox.Location = new System.Drawing.Point(259, 107);
+            this.privateKeyBox.Multiline = true;
+            this.privateKeyBox.Name = "privateKeyBox";
+            this.privateKeyBox.ReadOnly = true;
+            this.privateKeyBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.privateKeyBox.Size = new System.Drawing.Size(201, 47);
+            this.privateKeyBox.TabIndex = 50;
+            // 
+            // slaveRsaPublicKey
+            // 
+            this.slaveRsaPublicKey.Location = new System.Drawing.Point(259, 174);
+            this.slaveRsaPublicKey.Multiline = true;
+            this.slaveRsaPublicKey.Name = "slaveRsaPublicKey";
+            this.slaveRsaPublicKey.ReadOnly = true;
+            this.slaveRsaPublicKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.slaveRsaPublicKey.Size = new System.Drawing.Size(201, 47);
+            this.slaveRsaPublicKey.TabIndex = 51;
+            // 
+            // tdesKey
+            // 
+            this.tdesKey.Location = new System.Drawing.Point(259, 244);
+            this.tdesKey.Multiline = true;
+            this.tdesKey.Name = "tdesKey";
+            this.tdesKey.ReadOnly = true;
+            this.tdesKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tdesKey.Size = new System.Drawing.Size(201, 47);
+            this.tdesKey.TabIndex = 52;
+            // 
             // Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 604);
+            this.Controls.Add(this.tdesKey);
+            this.Controls.Add(this.slaveRsaPublicKey);
+            this.Controls.Add(this.privateKeyBox);
+            this.Controls.Add(this.publicKeyBox);
+            this.Controls.Add(this.encryptedTdesBox);
             this.Controls.Add(this.generateRsaKeysButton);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.desencryptedText);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.TdesKeyValueLabel);
-            this.Controls.Add(this.rsaSlaveKeyValueLabel);
             this.Controls.Add(this.importRsaSlaveButton);
-            this.Controls.Add(this.privateKeyValueLabel);
-            this.Controls.Add(this.publicKeyValueLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.encryptedText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.encryptTdesKeyButton);
             this.Controls.Add(this.generateTdesButton);
-            this.Controls.Add(this.textToDecryptLabel);
             this.Controls.Add(this.publicKeyLabel2);
             this.Controls.Add(this.privateKeyLabel1);
             this.Name = "Master";
@@ -254,22 +261,22 @@
         #endregion
         private System.Windows.Forms.Label privateKeyLabel1;
         private System.Windows.Forms.Label publicKeyLabel2;
-        private System.Windows.Forms.Label textToDecryptLabel;
         private System.Windows.Forms.Button generateTdesButton;
         private System.Windows.Forms.Button encryptTdesKeyButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label encryptedText;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label publicKeyValueLabel;
-        private System.Windows.Forms.Label privateKeyValueLabel;
-        private System.Windows.Forms.Label rsaSlaveKeyValueLabel;
-        private System.Windows.Forms.Label TdesKeyValueLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label desencryptedText;
         private System.Windows.Forms.Button importRsaSlaveButton;
         private System.Windows.Forms.Button generateRsaKeysButton;
+        private System.Windows.Forms.TextBox encryptedTdesBox;
+        private System.Windows.Forms.TextBox publicKeyBox;
+        private System.Windows.Forms.TextBox privateKeyBox;
+        private System.Windows.Forms.TextBox slaveRsaPublicKey;
+        private System.Windows.Forms.TextBox tdesKey;
     }
 }
 

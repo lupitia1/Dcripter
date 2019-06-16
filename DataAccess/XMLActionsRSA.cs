@@ -12,10 +12,24 @@ namespace DataAccess
     {
         RSAProviderService rsaProvider = RSAProviderService.Instance;
 
-        public void generateRsaXML() {
+        public void generateRsaXML(String path) {
             XDocument document = new XDocument();
             document.Add(new XElement("root", new XElement("clavepublica", rsaProvider.keyPar[1])));
-            document.Save("cp_esclavo.xml");
+            document.Save(path);
+        }
+
+        public string ReadRsa(String path)
+        {
+            StringBuilder result = new StringBuilder();
+
+            foreach (XElement level1Element in XElement.Load(path).Elements("clavepublica"))
+            {
+
+                result.AppendLine(level1Element.Value);
+                rsaProvider.slaveStringPublicKey = level1Element.Value;
+            }
+
+            return result.ToString();
         }
     }
 }
